@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1717332568 source:d:\projects\english number\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

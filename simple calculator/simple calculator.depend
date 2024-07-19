@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1718292623 source:d:\computer\projects\simple calculator\simple calculator.c
+	<stdio.h>
+	"calculator.h"
+
+1718292316 source:d:\computer\projects\simple calculator\main.c
+	<stdio.h>
+	<stdlib.h>
+	"calculator.h"
+
+1718292206 d:\computer\projects\simple calculator\calculator.h
+

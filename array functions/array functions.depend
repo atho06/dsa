@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1718646746 source:d:\projects\array functions\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1718115080 source:d:\projects\matrix multiplication\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1718300284 source:d:\computer\projects\matrix multiplication\main.c
+	<stdio.h>
+	<stdlib.h>
+

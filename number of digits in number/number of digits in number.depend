@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1717334722 source:d:\projects\number of digits in number\main.c
+	<stdio.h>
+	<stdlib.h>
+

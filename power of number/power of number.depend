@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1716985546 source:d:\projects\power of number\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

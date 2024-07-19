@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1717416588 source:d:\projects\greatest positive number\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1717584080 source:d:\computer\projects\greatest positive number\main.c
+	<stdio.h>
+	<stdlib.h>
+

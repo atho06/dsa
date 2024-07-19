@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1718888402 source:d:\projects\no_of_digits(recursion)\main.c
+	<stdio.h>
+	<stdlib.h>
+

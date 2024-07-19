@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1716982273 source:d:\projects\circumference\main.c
+	<stdio.h>
+	<stdlib.h>
+

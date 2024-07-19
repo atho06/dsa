@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1718974397 source:d:\projects\binary_search_recursion\main.c
+	<stdio.h>
+	<stdlib.h>
+

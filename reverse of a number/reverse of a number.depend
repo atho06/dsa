@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1717384974 source:d:\projects\reverse of a number\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1720790644 source:d:\computer\projects\reverse of a number\main.c
+	<stdio.h>
+	<stdlib.h>
+

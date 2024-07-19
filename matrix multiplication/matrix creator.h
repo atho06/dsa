@@ -1,0 +1,6 @@
+#ifndef MATRIX_CREATOR_H_INCLUDED
+#define MATRIX_CREATOR_H_INCLUDED
+
+int create_matrix(int);
+
+#endif // MATRIX_CREATOR_H_INCLUDED
