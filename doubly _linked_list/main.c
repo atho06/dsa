@@ -9,36 +9,40 @@ typedef struct NODE
 
 } Node;
 
-Node *insert_beginning(Node* first, int data)
+Node *insert_beginning(Node *first, int data)
 {
-    Node* newnode= (Node*)malloc(sizeof(Node));
-    newnode-> data=data;
-    newnode->next=first;
-    newnode->prev=NULL;
-    if (first!=NULL)
+    Node *newnode = (Node *)malloc(sizeof(Node));
+    newnode->data = data;
+    newnode->next = first;
+    newnode->prev = NULL;
+    if (first != NULL)
     {
-        first->prev=newnode;
+        first->prev = newnode;
     }
     return newnode;
 }
 
-void *insert_end(Node* first, int data)
+Node *insert_end(Node *first, int data)
 {
-    Node* curr=NULL;
-    Node*newnode=(Node*)malloc(sizeof(Node));
-    if (first!=NULL)
+    Node *curr = NULL;
+    Node *newnode = (Node *)malloc(sizeof(Node));
+    newnode->data = data;
+    newnode->next = NULL;
+
+    if (first != NULL)
+    // find the last Node and attach the new node to the last Node
     {
-        for (curr=first; curr->next!=NULL; curr=curr->next);
-        curr->next=newnode;
+        for (curr = first; curr->next != NULL; curr = curr->next)
+            ;
+        curr->next = newnode;
     }
     else
-        first=newnode;
-    newnode->data=data;
-    newnode->next =NULL;
-    newnode->prev= curr;
+        first = newnode;
+    newnode->prev = curr;
+    return first;
 }
 
-Node* delete_beginning(Node* first)
+Node *delete_beginning(Node *first)
 {
     int *ptr;
     Node *newfirst = first->next;
@@ -47,15 +51,15 @@ Node* delete_beginning(Node* first)
     return newfirst;
 }
 
-
-int delete_end(Node* first)
+int delete_end(Node *first)
 {
-    Node* curr;
+    Node *curr;
     int data;
-    for (curr=first; curr->next->next!=NULL; curr=curr->next);
-    data=curr->next->data;
+    for (curr = first; curr->next->next != NULL; curr = curr->next)
+        ;
+    data = curr->next->data;
     free(curr->next);
-    curr->next=NULL;
+    curr->next = NULL;
     return data;
 }
 
@@ -73,16 +77,16 @@ int main()
 {
     Node *list = NULL;
     int value;
-    list=insert_end(list, 32);
+    list = insert_end(list, 32);
+    // insert_end(list, 32);
     display(list);
-    list= insert_beginning(list, 12);
+
+    list = insert_beginning(list, 12);
     display(list);
-    list= insert_beginning(list, 82);
+    list = insert_beginning(list, 82);
     display(list);
-    list=insert_end(list, 26);
-    display(list);
-    list=delete_end(list);
+    list = insert_end(list, 26);
+    // insert_end(list, 26);
     display(list);
     return 0;
-
 }
