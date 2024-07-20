@@ -44,28 +44,32 @@ Node *insert_end(Node *first, int data)
 
 Node *delete_beginning(Node *first)
 {
-    int *ptr;
-    Node *newfirst = first->next;
-    *ptr = first->data;
-    free(first);
-    return newfirst;
+    Node *temp = first;
+    int data;
+    data = first->data;
+    first = first->next;
+    free(temp);
+    printf("Deleted element: %d\n", data);
+    return first;
 }
 
-int delete_end(Node *first)
+Node *delete_end(Node *first)
 {
     Node *curr;
     int data;
-    for (curr = first; curr->next->next != NULL; curr = curr->next)
-        ;
+    first->prev=NULL;
+    for (curr = first; curr->next->next != NULL; curr = curr->next);
     data = curr->next->data;
     free(curr->next);
     curr->next = NULL;
-    return data;
+    printf("Deleted element:%d\n", data);
+    return first;
 }
 
 void display(Node *first)
 {
     Node *curr;
+    printf("NULL->");
     for (curr = first; curr != NULL; curr = curr->next)
     {
         printf("|%d|->", curr->data);
@@ -73,20 +77,56 @@ void display(Node *first)
     printf("NULL\n");
 }
 
+int choice()
+{
+    int choice;
+    printf("\n********MENU********\n");
+    printf("1. insert at the beginning of the list\n");
+    printf("2. insert at the end of the list\n");
+    printf("3. delete at the beginning of the list\n");
+    printf("4. delete at the end of the list\n");
+    printf("5. Display\n");
+    printf("6. EXIT\n");
+    printf("********************");
+    printf("\nEnter choice:");
+    scanf("%d", &choice);
+    return choice;
+}
+
 int main()
 {
     Node *list = NULL;
-    int value;
-    list = insert_end(list, 32);
-    // insert_end(list, 32);
-    display(list);
+    int ch, elmnt;
+    while (1)
+    {
+        ch=choice();
+        switch(ch)
+        {
+        case 1:
+            printf("Enter element:");
+            scanf("%d", &elmnt);
+            list = insert_beginning(list, elmnt);
+            break;
+        case 2:
+            printf("Enter element:");
+            scanf("%d", &elmnt);
+            list = insert_end(list, elmnt);
+            break;
+        case 3:
+            list=delete_beginning(list);
+            break;
+        case 4:
+            list=delete_end(list);
+            break;
+        case 5:
+            display(list);
+            break;
+        case 6:
+            return 0;
 
-    list = insert_beginning(list, 12);
-    display(list);
-    list = insert_beginning(list, 82);
-    display(list);
-    list = insert_end(list, 26);
-    // insert_end(list, 26);
-    display(list);
+        default:
+            printf("Enter correct choice!!!\n\n");
+        }
+    }
     return 0;
 }
